@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会闹工作室 · 导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: radial-gradient(circle at 20% 50%, #1a1a2e 0%, #0b0b0b 80%);
+        }
+
+        .container {
+            max-width: 520px;
+            width: 100%;
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
+            padding: 40px 30px 50px;
+            box-shadow: 0 30px 80px rgba(251, 191, 36, 0.12);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fbbf24;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .logo small {
+            font-weight: 400;
+            font-size: 16px;
+            color: #aaa;
+            letter-spacing: 0;
+            margin-left: 6px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 20px;
+        }
+        .subtitle span {
+            color: #fbbf24;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .btn {
+            display: block;
+            padding: 22px 20px;
+            border-radius: 60px;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #111;
+            background: #fbbf24;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 0 #b7811a;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .btn::after {
+            content: '→';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            opacity: 0.6;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 0 #b7811a, 0 10px 30px rgba(251, 191, 36, 0.25);
+            background: #fcd34d;
+        }
+        .btn:hover::after {
+            right: 20px;
+            opacity: 1;
+        }
+
+        .btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #b7811a;
+        }
+
+        /* 天气按钮 - 绿色 */
+        .btn-tq {
+            background: #10b981;
+            box-shadow: 0 8px 0 #047857;
+            color: #fff;
+        }
+        .btn-tq:hover {
+            background: #34d399;
+            box-shadow: 0 12px 0 #047857, 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        /* 地图按钮 - 橙色 */
+        .btn-map {
+            background: #f59e0b;
+            box-shadow: 0 8px 0 #b45309;
+            color: #fff;
+        }
+        .btn-map:hover {
+            background: #fbbf24;
+            box-shadow: 0 12px 0 #b45309, 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        /* 搜索影星按钮 - 紫色 */
+        .btn-search {
+            background: #8b5cf6;
+            box-shadow: 0 8px 0 #6d28d9;
+            color: #fff;
+        }
+        .btn-search:hover {
+            background: #a78bfa;
+            box-shadow: 0 12px 0 #6d28d9, 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        /* 论坛按钮 - 蓝色 */
+        .btn-forum {
+            background: #3b82f6;
+            box-shadow: 0 8px 0 #1d4ed8;
+            color: #fff;
+        }
+        .btn-forum:hover {
+            background: #60a5fa;
+            box-shadow: 0 12px 0 #1d4ed8, 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn .icon {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 28px;
+            vertical-align: middle;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #444;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+        .footer a {
+            color: #666;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer a:hover {
+            color: #fbbf24;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px 40px; }
+            .btn { font-size: 18px; padding: 18px 16px; }
+            .btn .icon { font-size: 24px; }
+            .logo { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            🎭 会闹 <small>工作室</small>
+        </div>
+        <div class="subtitle">
+            <span>·</span> 选择你的目的地 <span>·</span>
+        </div>
+
+        <div class="btn-group">
+            <!-- 天气按钮 -->
+            <a href="https://hngzs.work.gd/tq" class="btn btn-tq" target="_blank">
+                <span class="icon">🌤️</span> 天气 · TQ
+            </a>
+
+            <!-- 地图按钮 -->
+            <a href="https://hngzs.work.gd/dt" class="btn btn-map" target="_blank">
+                <span class="icon">🗺️</span> 地图 · DT
+            </a>
+
+            <!-- 搜索影星按钮（新增） -->
+            <a href="https://hngzs.work.gd/ssyx" class="btn btn-search" target="_blank">
+                <span class="icon">🔍</span> 搜索影星
+            </a>
+
+            <!-- 会闹论坛按钮 -->
+            <a href="https://hnst.work.gd" class="btn btn-forum" target="_blank">
+                <span class="icon">📝</span> 会闹论坛
+            </a>
+        </div>
+
+        <div class="footer">
+            <a href="https://hngzs.work.gd" target="_blank">hngzs.work.gd</a>  ·  一键直达
+        </div>
+    </div>
+</body>
+</html>
